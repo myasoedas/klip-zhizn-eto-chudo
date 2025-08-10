@@ -1,0 +1,30 @@
+VEO3.RU; MODE=SINGLE\_SHOT\_TIMED; AUDIO=GENERATE\_SYNC; DUR=5000ms; ASPECT=16:9; RES=3840x2160; SEED=LOCK; DELIVER=MASTER\_16x9\_WITH\_AUDIO;
+CENTER\_STRIP\_W=0.32; CENTER\_STRIP\_H=1.00; TITLE\_SAFE=10%; GRAIN=2.5%;
+COLORS\:pink=#FF3DAA,gold=#F9C56C,bg=#0D1330;
+CAM\_FPS=24; LENS\_TUNNEL=24-28mm; LENS\_LOGO=35-50mm; BLUR=moderate; SPIN\_MAX=800ms;
+LOGO\_REF=ATTACHED; LOGO\_EXACT=TRUE; LOGO\_GLOW=inner,outer,soft; LOGO\_LUMA\_ADJ=+10%;
+FORBID=redesign\_logo,typography\_change,platform\_UI,text,watermarks,heavy\_flares,lens\_dirt,extrusion3D,drift\_outside\_center;
+AUDIO\_LUFS=-9; TRUE\_PEAK\_DB<=-1; LOW\_MONO\_HZ<120; KEY=G#min; BPM\_REF=92;
+
+TIMELINE:
+t0-50 VIDEO\:black+2\_dust\_center; AUDIO\:air\_click 3600 Hz 6-8 ms + breath\_in HPF 250 Hz low.
+t50-120 VIDEO\:dark\_pull\_center,faint\_smoke; AUDIO\:reverse\_swish BP 900-6000 Hz rise\_to 120 ms pan L->C.
+t120-180 VIDEO\:white\_flash->pink-gold\_spherical\_wave (no\_clip,grain\_on); AUDIO\:sub 51.9 Hz + harm 103.8 Hz; click 3500 Hz + noise 10000-12000 Hz; noise\_burst HPF 120 Hz; sidechain\_all -3 dB 120 ms.
+t180-400 VIDEO\:wave\_expands,pink\_core+gold\_corona,center\_locked; AUDIO\:warp\_whoosh pink\_noise doppler +3 st/500 ms, width 35%; tunnel\_core 103.8 Hz mono.
+t400-800 VIDEO\:enter\_vortex,spin<=0.8 s then straight\_central\_flight.
+t500 EVENT VIDEO\:shard\_1 snap\_center; AUDIO\:coin G#5 831 Hz + tick 1600 Hz.
+t800-1200 VIDEO\:HUD\_arc 20-60% (diegetic,no\_text).
+t900 EVENT VIDEO\:shard\_2 snap; AUDIO\:coin B5 988 Hz + tick.
+t1200-1600 VIDEO\:shards\_funnel,HUD 60-90; AUDIO\:arp G#4->D#5->G#5 (+4 st/1200 ms), stereo 20-40%, high\_shelf +1.5 dB @ 6000 Hz.
+t1300 EVENT VIDEO\:shard\_3 snap; AUDIO\:coin D#6 1175 Hz + tick.
+t1600-2000 VIDEO\:HUD 100 fade.
+t2000-2400 VIDEO\:reveal HEART WIREFRAME exactly\_reference.
+t2400-2620 VIDEO\:fill SOLID neon\_heart + EXACT wordmark; AUDIO\:chime D#6 plate 0.35 s.
+t2620-3100 VIDEO\:hold centered\_logo; AUDIO\:pulsing\_glow sidechain -2.5 dB 180 ms @3100 ms.
+t4200-4450 VIDEO\:subtle\_outward\_ripple; AUDIO\:breath\_out pink\_noise HPF 3800 Hz low.
+t4450-4800 VIDEO\:prep\_specular\_highlight upper\_right\_edge.
+t4800-5000 VIDEO\:move\_highlight\_to\_anchor; FINAL stable centered logo; HARD\_CUT at 5000 ms; AUDIO\:spark 3200 Hz 15 ms.
+
+ASSERT\:center\_locked,no\_logo\_drift,no\_platform\_UI,LUFS=-9±0.5,TP<=-1.
+
+EN NOTE: One 5.0 s 16:9 master with fully synced audio and SFX per timeline. Start black -> big-bang flash -> warp tunnel with three shard pickups -> assemble the AERONYTE neon-heart logo EXACTLY like the attached reference, hold centered, tiny specular highlight, hard cut at 5000 ms. Keep all key content inside a 0.32W center strip for later 9:16 crop; loudness -9 LUFS, true peak <= -1 dBTP; no extra text or UI.

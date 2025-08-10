@@ -1,0 +1,31 @@
+VEO3.RU; MODE=SINGLE\_SHOT\_TIMED; AUDIO=GENERATE\_SYNC; DUR=5000ms; ASPECT=16:9; RES=3840x2160; SEED=LOCK; DELIVER=MASTER\_16x9\_WITH\_AUDIO;
+CENTER\_STRIP\_W=0.32; CENTER\_STRIP\_H=1.00; TITLE\_SAFE=10%; GRAIN=2.5%; COLORS\:pink=#FF3DAA,gold=#F9C56C,bg=#0D1330;
+CAM\_FPS=24; LENS\_TUNNEL=24-28mm; LENS\_LOGO=35-50mm; BLUR=moderate; SPIN\_MAX=800ms;
+LOGO\_REF=ATTACHED; LOGO\_EXACT=TRUE; LOGO\_GLOW=inner,outer,soft; LOGO\_LUMA=+10%;
+FORBID=redesign\_logo,typography\_change,platform\_UI,text,watermarks,heavy\_flares,lens\_dirt,3D\_extrusion,drift\_outside\_center;
+AUDIO\_LUFS=-9; TRUE\_PEAK\_DB<=-1; LOW\_MONO\_HZ<120; KEY=G#min; BPM\_REF=92;
+
+TIMELINE:
+t0-50 V\:black+2\_dust\_center; A\:air\_click 3600Hz 6-8ms + breath\_in HPF250.
+t50-120 V\:pull\_center,faint\_smoke; A\:rev\_swish BP900-6000 to120ms pan L->C.
+t120-180 V\:white\_flash->pinkgold\_wave (no\_clip,grain\_on); A\:sub 51.9Hz + harm 103.8Hz; click 3500Hz + noise 10000-12000Hz; burst HPF120Hz; sidechain\_all -3dB 120ms.
+t180-400 V\:wave\_expands,pink\_core+gold\_corona; A\:warp pink\_noise doppler +3st/500ms width35%; core 103.8Hz mono.
+t400-800 V\:enter\_vortex,spin<=0.8s then straight\_center flight.
+t500 EVENT V\:shard1 snap\_center; A\:coin G#5 831Hz + tick 1600Hz.
+t800-1200 V\:HUD\_arc 20-60 (diegetic,no\_text).
+t900 EVENT V\:shard2 snap; A\:coin B5 988Hz + tick.
+t1200-1600 V\:shards\_funnel,HUD 60-90; A\:arp G#4->D#5->G#5 (+4st/1200ms) stereo 20-40, high\_shelf +1.5dB @6000Hz.
+t1300 EVENT V\:shard3 snap; A\:coin D#6 1175Hz + tick.
+t1600-2000 V\:HUD 100 fade.
+t2000-2400 V\:reveal HEART WIREFRAME exact\_reference.
+t2400-2620 V\:fill SOLID neon\_heart + EXACT wordmark; A\:chime D#6 plate 0.35s.
+t2620-3100 V\:hold centered\_logo; A\:pulsing\_glow sidechain -2.5dB 180ms @3100.
+t4200-4450 V\:subtle\_outward\_ripple; A\:breath\_out pink\_noise HPF3800 low.
+t4450-4800 V\:prep specular\_highlight upper\_right edge.
+t4800-5000 V\:move highlight to anchor; FINAL: stable centered logo; HARD\_CUT at 5000; A\:spark 3200Hz 15ms.
+
+ASSERT\:center\_locked,no\_logo\_drift,no\_platform\_UI,LUFS=-9+/-0.5,TP<=-1.
+CHARS: 1998
+
+5 с: тьма → белая вспышка → полёт в розово-золотом туннеле; три неоновых шарда на ударах собираются в точный логотип AERONYTE по центру; блик-якорь → жёсткий кат на 5.0 с.
+Звук: reverse-swish → саб-импакт → whoosh → 3 coin-chime → logo chime → spark-ping; громкость −9 LUFS, TP ≤ −1 dBTP.
